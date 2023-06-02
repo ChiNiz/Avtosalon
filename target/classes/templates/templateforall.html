@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <title>Автосалон</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Pulse Used furniture HTML Template">
+    <meta name="keywords" content="pulse, Used furniture, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="shortcut icon"/>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href = "@{/css/font-awesome.min.css}"/>
+    <link rel="stylesheet" th:href = "@{/css/flaticon.css}"/>
+    <link rel="stylesheet" th:href = "@{/css/owl.carousel.css}"/>
+    <link rel="stylesheet" th:href = "@{/css/style.css}"/>
+    <link rel="stylesheet" th:href = "@{/css/animate.css}"/>
+
+
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Header section -->
+<header class="header-section" th:fragment="header">
+    <div class="header-warp">
+        <div class="site-logo">
+            <h2>𝕍𝕊</h2>
+        </div>
+        <!-- responsive -->
+        <div class="nav-switch">
+            <i class="fa fa-bars"></i>
+        </div>
+        <!-- menu -->
+        <ul class="main-menu">
+<!--            <li><a href="index" class="active">Home</a></li>-->
+            <li><a href="index">Главная страница</a></li>
+           <li><a href="about">Автомобили</a></li>
+            <li><a href="accessories">Аксессуары</a></li>
+           <li><a href="menu">Комлпектации автомобилей</a></li>
+           <!--<li><a href="blog">News</a></li> -->
+<!--            <li><a href="contact">Contact</a></li>-->
+            <li><a href="authorization">Авторизация</a></li>
+            <!-- <li><a href="registration">Регистрация</a></li>-->
+             <li><a href="shoppingbasket">Заказ автомобиля</a></li>
+             <li><a href="account">Аккаунт</a></li>
+         </ul>
+ <!--        <ul class="main-menu">-->
+<!--&lt;!&ndash;            <li><a href="index" class="active">Home</a></li>&ndash;&gt;-->
+<!--            <li><a href="index" th:class="${home_state}">Home</a></li>-->
+<!--            <li><a href="about" th:class="${about_state}">About us</a></li>-->
+<!--            <li><a href="menu" th:class="${Used furniture_state}">Used furniture</a></li>-->
+<!--            <li><a href="blog" th:class="${news_state}">News</a></li>-->
+<!--            <li><a href="contact" th:class="${contact_state}">Contact</a></li>-->
+<!--            <li><a href="authorization" th:class="${contact_state}">Аuthorization</a></li>-->
+<!--        </ul>-->
+        <div class="header-right">
+            <p><span>Горячая линия</span> <i class="fa fa-phone"></i> +8 985-263-83-33</p>
+        </div>
+    </div>
+</header>
+<!-- Header section end -->
+
+<!-- Footer section -->
+<footer class="footer-section" th:fragment="footer">
+    <div class="main-footer widgets-dark typo-light">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="widget subscribe no-box">
+                        <h5 class="widget-title">VS Автосалон<span></span></h5>
+                        <p>Наша компания является официальным дилером машин Toyota в России</p>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="widget no-box">
+                        <h5 class="widget-title">Быстрые ссылки<span></span></h5>
+                        <ul class="thumbnail-widget">
+                            <li>
+                                <div class="thumb-content"><a href="about">Автомобили</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content"><a href="accessories">Аксессуары</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="widget no-box">
+                        <h5 class="widget-title">Стать частью клуба Toyota<span></span></h5>
+                        <p>Зарегистрироваться в программе лояльности</p>
+                        <a class="btn" href="registration" target="_blank">Зарегистрироваться</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3">
+
+                    <div class="widget no-box">
+                        <h5 class="widget-title">Связаться с нами<span></span></h5>
+
+                        <p><a href="mailto:shagovoyvv@gmail.com" title="glorythemes">shagovoyvv@gmail.com</a></p>
+                        <ul class="social-footer2">
+                            <li class=""><a title="YouTube" target="_blank" href="https://www.youtube.com/@toyotausa"><img alt="YouTube"  src="img/yt.png"></a></li>
+                            <li class=""><a href="https://vk.com/toyotarussia" target="_blank" title="VKontakte"><img alt="VKontakte"  src="img/vk.png"></a></li>
+                            <li class=""><a href="https://t.me/bagel_12" target="_blank" title="Telegram"><img alt="Telegram"  src="img/tel.png"></a></li>
+                            <li class=""><a title="Instagram" target="_blank" href="https://www.instagram.com/toyotarussia"><img alt="Instagram"  src="img/inst.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>VS © 2023. Все права защищены.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer section end -->
+
+
+
+<!--====== Javascripts & Jquery ======-->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/circle-progress.min.js"></script>
+<script src="js/main.js"></script>
+
+
+<!-- load for map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YyDTa0qqOjIerob2VTIwo_XVMhrruxo"></script>
+<script src="js/map.js"></script>
+
+</body>
+</html>

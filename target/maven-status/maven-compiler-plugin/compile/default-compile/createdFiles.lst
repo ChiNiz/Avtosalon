@@ -1,0 +1,15 @@
+com\taibov\kursovaya\repositories\AddressRepo.class
+com\taibov\kursovaya\KursovayaApplication.class
+com\taibov\kursovaya\entities\MealTime.class
+com\taibov\kursovaya\Configuration.class
+com\taibov\kursovaya\entities\Meal.class
+com\taibov\kursovaya\entities\Address.class
+com\taibov\kursovaya\controllers\HomePageController.class
+com\taibov\kursovaya\repositories\OrderRepo.class
+com\taibov\kursovaya\entities\Client.class
+com\taibov\kursovaya\entities\IDo.class
+com\taibov\kursovaya\repositories\ClientRepo.class
+com\taibov\kursovaya\entities\Order.class
+com\taibov\kursovaya\repositories\MealRepo.class
+com\taibov\kursovaya\Main.class
+com\taibov\kursovaya\entities\Client$ClientBuilder.class

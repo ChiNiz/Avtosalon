@@ -2,6 +2,7 @@ com\taibov\kursovaya\repositories\AddressRepo.class
 com\taibov\kursovaya\KursovayaApplication.class
 com\taibov\kursovaya\entities\MealTime.class
 com\taibov\kursovaya\Configuration.class
+com\taibov\kursovaya\SimpleEmailService.class
 com\taibov\kursovaya\entities\Meal.class
 com\taibov\kursovaya\entities\Address.class
 com\taibov\kursovaya\controllers\HomePageController.class

@@ -1,5 +1,6 @@
 package com.taibov.kursovaya.controllers;
 
+import com.taibov.kursovaya.SimpleEmailService;
 import com.taibov.kursovaya.entities.*;
 import com.taibov.kursovaya.repositories.AddressRepo;
 import com.taibov.kursovaya.repositories.ClientRepo;
@@ -7,6 +8,8 @@ import com.taibov.kursovaya.repositories.MealRepo;
 import com.taibov.kursovaya.repositories.OrderRepo;
 import com.taibov.kursovaya.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -20,6 +23,9 @@ import java.util.*;
 @Controller
 public class HomePageController
 {
+    @Autowired
+    private SimpleEmailService emailService;
+
     @Autowired
     private ClientRepo clientRepo;
 
@@ -121,6 +127,20 @@ public class HomePageController
     @GetMapping("about")
     public String aboutGet(){
         return "about";
+    }
+
+    @PostMapping("about")
+    public String aboutPost(@RequestParam Map<String, Object> map){
+        System.out.println("Email start");
+        emailService.sendSimpleMessage((String) map.get("email"), "Запись на тест-драйв",
+                "Уважаемый/ая, " + (String) map.get("name") + "!\n " +
+                        "Произведена запись на тест-драйв на машине " + (String) map.get("cars") +
+                        " на " +
+                        (String) map.get("vrem") + " " + (String) map.get("date") +
+                        " числа! Мы выполнили все Ваши пожелания:\n" +
+                        (String) map.get("addtext"));
+        System.out.println("Email send");
+        return "redirect:/about";
     }
 
     @GetMapping("accessories")

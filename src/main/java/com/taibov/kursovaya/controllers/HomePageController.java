@@ -51,6 +51,8 @@ public class HomePageController
             if (authorizated.get(ip).getRole().equals("admin"))
             {
                 model.addAttribute("users", clientRepo.findAll());
+                if(shoppingBasket.get(authorizated.get(getClientIp(request)).getId())!=null)
+                    model.addAttribute("user_SB_count", shoppingBasket.get(authorizated.get(getClientIp(request)).getId()).stream().count());
                 return "userList";
             }
         }
@@ -82,6 +84,8 @@ public class HomePageController
             if (authorizated.get(ip).getRole().equals("admin"))
             {
                 model.addAttribute("user", clientRepo.findClientById(id));
+                if(shoppingBasket.get(authorizated.get(getClientIp(request)).getId())!=null)
+                    model.addAttribute("user_SB_count", shoppingBasket.get(authorizated.get(getClientIp(request)).getId()).stream().count());
                 return "user";
             }
         }
@@ -120,12 +124,18 @@ public class HomePageController
     }
 
     @GetMapping("index")
-    public String indexGet(){
+    public String indexGet(HttpServletRequest request, Model model){
+        if(authorizated.get(getClientIp(request)) != null)
+            if(shoppingBasket.get(authorizated.get(getClientIp(request)).getId())!=null)
+                model.addAttribute("user_SB_count", shoppingBasket.get(authorizated.get(getClientIp(request)).getId()).stream().count());
         return "index";
     }
 
     @GetMapping("about")
-    public String aboutGet(){
+    public String aboutGet(HttpServletRequest request, Model model){
+        if(authorizated.get(getClientIp(request)) != null)
+            if(shoppingBasket.get(authorizated.get(getClientIp(request)).getId())!=null)
+                model.addAttribute("user_SB_count", shoppingBasket.get(authorizated.get(getClientIp(request)).getId()).stream().count());
         return "about";
     }
 
@@ -144,12 +154,15 @@ public class HomePageController
     }
 
     @GetMapping("accessories")
-    public String accessoriesGet(){
+    public String accessoriesGet(HttpServletRequest request, Model model){
+        if(authorizated.get(getClientIp(request)) != null)
+            if(shoppingBasket.get(authorizated.get(getClientIp(request)).getId())!=null)
+                model.addAttribute("user_SB_count", shoppingBasket.get(authorizated.get(getClientIp(request)).getId()).stream().count());
         return "accessories";
     }
 
     @GetMapping("menu")
-    public String menuGet(Model model){
+    public String menuGet(Model model, HttpServletRequest request){
         List<Meal> mealssedan = mealRepo.findMealsByMealtime(MealTime.SEDAN);
         model.addAttribute("mealssedan", mealssedan);
         List<Meal> mealsmini = mealRepo.findMealsByMealtime(MealTime.MINI);
@@ -166,6 +179,9 @@ public class HomePageController
         model.addAttribute("mealsvonuch", mealsvonuch);
         List<Meal> mealsvoda = mealRepo.findMealsByMealtime(MealTime.VODA);
         model.addAttribute("mealsvoda", mealsvoda);
+        if(authorizated.get(getClientIp(request)) != null)
+            if(shoppingBasket.get(authorizated.get(getClientIp(request)).getId())!=null)
+                model.addAttribute("user_SB_count", shoppingBasket.get(authorizated.get(getClientIp(request)).getId()).stream().count());
         return "menu";
     }
 
@@ -186,7 +202,10 @@ public class HomePageController
     }
 
     @GetMapping("blog")
-    public String blogGet(){
+    public String blogGet(HttpServletRequest request, Model model){
+        if(authorizated.get(getClientIp(request)) != null)
+            if(shoppingBasket.get(authorizated.get(getClientIp(request)).getId())!=null)
+                model.addAttribute("user_SB_count", shoppingBasket.get(authorizated.get(getClientIp(request)).getId()).stream().count());
         return "blog";
     }
 
@@ -214,7 +233,10 @@ public class HomePageController
     }
 
     @GetMapping("elements")
-    public String elementsGet(){
+    public String elementsGet(HttpServletRequest request, Model model){
+        if(authorizated.get(getClientIp(request)) != null)
+            if(shoppingBasket.get(authorizated.get(getClientIp(request)).getId())!=null)
+                model.addAttribute("user_SB_count", shoppingBasket.get(authorizated.get(getClientIp(request)).getId()).stream().count());
         return "elements";
     }
 
@@ -262,6 +284,8 @@ public class HomePageController
             }
             model.addAttribute("map", map);
             model.addAttribute("counter", counter);
+            if(shoppingBasket.get(authorizated.get(getClientIp(request)).getId())!=null)
+                model.addAttribute("user_SB_count", shoppingBasket.get(authorizated.get(getClientIp(request)).getId()).stream().count());
             return "shoppingbasket";
         }else{
             return "redirect:/authorization";
@@ -340,6 +364,9 @@ public class HomePageController
 //            System.out.println(ordersMap);
             model.addAttribute("orders", orders);
             model.addAttribute("ordersMap", ordersMap);
+            if(authorizated.get(getClientIp(request)) != null)
+                if(shoppingBasket.get(authorizated.get(getClientIp(request)).getId())!=null)
+                    model.addAttribute("user_SB_count", shoppingBasket.get(authorizated.get(getClientIp(request)).getId()).stream().count());
             return "account";
         }
         return "redirect:/authorization";

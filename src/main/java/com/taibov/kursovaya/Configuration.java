@@ -28,8 +28,8 @@ public class Configuration
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
-        mailSender.setUsername("vsavtosalonvs@gmail.com");
-        mailSender.setPassword("gfeseivdhwcyvdmn");
+        mailSender.setUsername("vsavtosalon@gmail.com");
+        mailSender.setPassword("ajifnwyvleznpsir");
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.smtp.auth", "true");

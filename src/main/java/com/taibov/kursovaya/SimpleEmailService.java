@@ -12,7 +12,7 @@ public class SimpleEmailService {
 
     public void sendSimpleMessage(String to, String subject, String text) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("noreply@avtosaloon.com");
+        message.setFrom("vsavtosalon@gmail.com");
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);
